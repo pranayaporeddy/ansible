@@ -8,9 +8,18 @@ pipeline {
       }
     }
     stage('dev') {
-      steps {
-        sh 'echo "Test"'
-        sh '"ls -a"'
+      parallel {
+        stage('dev') {
+          steps {
+            sh 'echo "Test"'
+            sh '"ls -a"'
+          }
+        }
+        stage('sandbox') {
+          steps {
+            sh 'echo "testing parallel stage"'
+          }
+        }
       }
     }
     stage('123') {
