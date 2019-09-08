@@ -7,5 +7,25 @@ pipeline {
         sh '"ls"'
       }
     }
+    stage('dev') {
+      parallel {
+        stage('dev') {
+          steps {
+            sh 'echo "Test"'
+            sh '"ls"'
+          }
+        }
+        stage('sandbox') {
+          steps {
+            sh 'echo "testing parallel stage"'
+          }
+        }
+      }
+    }
+    stage('123') {
+      steps {
+        sh 'echo "test test"'
+      }
+    }
   }
 }
