@@ -12,7 +12,7 @@ pipeline {
         stage('dev') {
           steps {
             sh 'echo "Test"'
-            sh '"ls"'
+            sh 'ls'
           }
         }
         stage('sandbox') {
