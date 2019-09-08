@@ -7,5 +7,16 @@ pipeline {
         sh '"ls"'
       }
     }
+    stage('dev') {
+      steps {
+        sh 'echo "Test"'
+        sh '"ls -a"'
+      }
+    }
+    stage('123') {
+      steps {
+        sh 'echo "test test"'
+      }
+    }
   }
 }
